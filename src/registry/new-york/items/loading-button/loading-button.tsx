@@ -15,7 +15,7 @@ interface iAppProps {
 }
 
 export const LoadingButton = ({
-  children,
+  children = "Click me",
   variant = "default",
   size = "default",
   className,
