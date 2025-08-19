@@ -11,6 +11,11 @@ import starlightThemeBlack from "starlight-theme-black";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      // FIXME: Once starlight supports Zod 4 we can probably remove this.
+      // Zod should normally be imported from astro, but I want my code to use its own zod version to reflect the version used in the shadcn components.
+      noExternal: ["zod"],
+    },
   },
 
   integrations: [
@@ -33,9 +38,12 @@ export default defineConfig({
             },
           ],
           footerText:
-            "Built & designed by [@ditinagrawal](https://x.com/ditinagrawal). The source code is available on [GitHub](https://github.com/ditinagrawal/better-ui).",
+            "Built & designed by [@ditinagrawal](https://portfolio.ditin.in). The source code is available on [GitHub](https://github.com/ditinagrawal/better-ui).",
         }),
       ],
+      editLink: {
+        baseUrl: "https://github.com/ditinagrawal/better-ui/tree/main",
+      },
       title: "Better Shadcn Components Every Week",
       logo: {
         dark: "./src/assets/dark.svg",

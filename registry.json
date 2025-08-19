@@ -2,5 +2,17 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "better-ui",
   "homepage": "https://better-ui.ditin.in",
-  "items": []
+  "items": [
+    {
+      "name": "loading-button",
+      "description": "A button that shows a loading spinner when clicked.",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/registry/new-york/items/loading-button/loading-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
 }

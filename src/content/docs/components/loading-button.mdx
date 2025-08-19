@@ -1,0 +1,68 @@
+---
+title: Loading Button
+description: A button that shows a loading spinner when clicked.
+---
+
+import CodePreview from "@/components/astro/code-preview/code-preview.astro";
+import AllPackageManager from "@/components/astro/all-package-manager.astro";
+import { publicEnv } from "@/lib/env";
+
+<CodePreview demo="loading-button/basic" />
+
+## Installation
+
+<AllPackageManager
+  type="dlx"
+  pkg={`shadcn@latest add ${publicEnv.BETTER_UI_URL}/r/loading-button.json`}
+/>
+
+## Usage
+
+```tsx
+import { LoadingButton } from "@/components/ui/loading-button";
+```
+
+```tsx
+const onClick = async () => {
+  // Simulate an async operation (e.g., API call)
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  console.log("Button action completed!");
+};
+
+<LoadingButton onClick={onClick}>Click me</LoadingButton>;
+```
+
+## Props
+
+### `children`
+
+- **Type:** `React.ReactNode`
+- **Description:** The content to display inside the button.
+
+### `variant`
+
+- **Type:** `"default" | "outline" | "ghost" | "link"`
+- **Default:** `"default"`
+- **Description:** The visual style variant of the button.
+
+### `size`
+
+- **Type:** `"default" | "sm" | "lg" | "icon"`
+- **Default:** `"default"`
+- **Description:** The size of the button.
+
+### `className`
+
+- **Type:** `string`
+- **Description:** Additional CSS classes to apply to the button.
+
+### `onClick`
+
+- **Type:** `() => Promise<void> | void`
+- **Description:** Function to call when the button is clicked. Can be async.
+
+### `type`
+
+- **Type:** `"button" | "submit" | "reset"`
+- **Default:** `"button"`
+- **Description:** The HTML button type attribute.
